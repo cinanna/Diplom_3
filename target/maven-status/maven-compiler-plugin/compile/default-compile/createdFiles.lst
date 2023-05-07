@@ -1,0 +1,11 @@
+org\example\pageobjects\PrivateCabinet.class
+org\example\login\requests\UserDataToLogin.class
+org\example\Main.class
+org\example\pageobjects\MainPage.class
+org\example\login\response\UserDataInResponse.class
+org\example\api\Api.class
+org\example\pageobjects\RegistrationPage.class
+org\example\create\UserDataToCreate.class
+org\example\login\response\LoginDataInResponse.class
+org\example\pageobjects\RefreshPasswordPage.class
+org\example\pageobjects\ToPrivateCabinetPage.class
