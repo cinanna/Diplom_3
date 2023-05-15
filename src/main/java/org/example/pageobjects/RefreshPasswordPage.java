@@ -1,5 +1,5 @@
 package org.example.pageobjects;
-
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,11 +14,10 @@ public class RefreshPasswordPage {
     private By auth = By.className("Auth_login__3hAey");
     //форма
 
-
     public RefreshPasswordPage(WebDriver driver) {
         this.driver = driver;
     }
-
+    @Step("Переход на страницу входа в Личный кабинет")
     public void toEntrance() {
         driver.findElement(entrance).click();
         new WebDriverWait(driver, Duration.ofSeconds(3))

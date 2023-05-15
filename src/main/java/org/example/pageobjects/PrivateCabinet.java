@@ -1,5 +1,6 @@
 package org.example.pageobjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,16 +24,19 @@ public class PrivateCabinet {
     public PrivateCabinet(WebDriver driver) {
         this.driver = driver;
     }
+    @Step("Переход на Гланую страницу через Конструктор")
     public void toMainPage() {
         driver.findElement(constructor).click();
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(burger));
     }
+    @Step("Переход на Главную страницу через Логотип")
     public void toMainPageLogo() {
         driver.findElement(logo).click();
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(burger));
     }
+    @Step("Выход из личного кабинета")
     public void logOut() {
         driver.findElement(exit).click();
         new WebDriverWait(driver, Duration.ofSeconds(10))

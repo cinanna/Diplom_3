@@ -1,4 +1,5 @@
 package org.example.pageobjects;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,27 +28,27 @@ public class ToPrivateCabinetPage {
     public ToPrivateCabinetPage(WebDriver driver) {
         this.driver = driver;
     }
-
+    @Step("Заполнить поле Email")
     public void setEmailInput(String email) {
         driver.findElement(inputEmail).sendKeys(email);
     }
-
+    @Step("Заполнить поле Пароль")
     public void setPasswordInput(String password) {
         driver.findElement(inputPassword).sendKeys(password);
      }
-
+    @Step("Нажать кнопку Войти")
     public void pressInButton() {
         driver.findElement(inButton).click();
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(burger));
     }
-
+    @Step("Нажать кнопку Зарегистрироваться")
     public void pressButtonRegistration() {
         driver.findElement(RegistrationButton).click();
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(cabinet));
     }
-
+    @Step("Нажать кнопку Восстановить пароль")
     public void pressButtonNewPassword() {
         driver.findElement(newPassword).click();
         new WebDriverWait(driver, Duration.ofSeconds(10))

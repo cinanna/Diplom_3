@@ -1,5 +1,6 @@
 package org.example.api;
 
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.example.create.UserDataToCreate;
@@ -20,7 +21,7 @@ public class Api {
     public void setURL(){
         RestAssured.baseURI = "https://stellarburgers.nomoreparties.site/";
     }
-
+    @Step("Настройка тестового окружения: Создание клиента")
     public void createUser() {
         UserDataToCreate userDataToCreate = new UserDataToCreate(email, password, name);
                    given()
@@ -45,7 +46,7 @@ public class Api {
                 .when()
                 .delete("api/auth/user");
     }
-
+    @Step("Настройка тестового окружения: Удаление клиента")
     public void removeUser() {
         UserDataToLogin userDataToLogin = new UserDataToLogin(email, password);
         Response response = loginUser(userDataToLogin);
